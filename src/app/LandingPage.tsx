@@ -335,7 +335,7 @@ function Card({ num, title, subtitle, graphic }: { num: string, title: string, s
 
 // --- Common UI Components ---
 
-type OptionType = string | { label: string; icon: string; link?: string; disabled?: boolean };
+type OptionType = string | { label: string; icon?: string; link?: string; disabled?: boolean };
 
 function CustomSelect({ label, options, placeholder, zIndex = 20, isFooter = false }: { label?: string, options: OptionType[], placeholder?: string, zIndex?: number, isFooter?: boolean }) {
     const [isOpen, setIsOpen] = useState(false);
@@ -733,7 +733,27 @@ const MetricItem = ({ label, value }: { label: string, value: string }) => (
 );
 
 function ContactSection() {
-    const options = { industry: ["뷰티 & 코스메틱", "패션 & 잡화", "식품 & F&B", "라이프스타일 & 리빙", "IT & 플랫폼", "교육 & 육아", "병원 & 전문직"], cat: ["마케팅", "브랜딩", "컨설팅"] };
+    const options = {
+        industry: [
+            "뷰티 & 코스메틱",
+            "패션 & 잡화",
+            { label: "식품 & F&B", disabled: true },
+            "라이프스타일 & 리빙",
+            "IT & 플랫폼",
+            "교육 & 육아",
+            "병원 & 전문직"
+        ],
+        cat: [
+            "리브랜딩 (Rebranding)",
+            "IMC 캠페인 기획",
+            { label: "검색광고 (SA)", disabled: true },
+            "배너광고 (DA)",
+            "SNS 운영",
+            "바이럴 마케팅",
+            "옥외광고",
+            "유튜브 PPL"
+        ]
+    };
     return (
         <div className="w-full bg-[#f2f5fc] py-20 md:py-32 px-4 flex justify-center">
             <div className="max-w-[1440px] w-full flex flex-col lg:flex-row gap-12 lg:gap-48 items-start justify-between">
@@ -752,15 +772,15 @@ function ContactSection() {
                                 <input type={f.t} className="w-full h-[44px] rounded-[8px] bg-white border border-transparent px-4 focus:outline-none focus:ring-2 focus:ring-[#1b1c1f]/20" />
                             </div>
                         ))}
-                        <CustomSelect label="Industry" options={options.industry} placeholder="뷰티 & 코스메틱" zIndex={30} />
-                        <CustomSelect label="Category" options={options.cat} placeholder="마케팅" zIndex={20} />
+                        <CustomSelect label="Industry" options={options.industry as any} placeholder="뷰티 & 코스메틱" zIndex={30} />
+                        <CustomSelect label="Category" options={options.cat as any} placeholder="리브랜딩 (Rebranding)" zIndex={20} />
                     </div>
                     <div className="flex-1 flex flex-col gap-6">
                         <div className="flex flex-col gap-2 grow h-full">
                             <label className="font-semibold text-[16px] md:text-[18px] text-[#1b1c1f]">Message</label>
                             <textarea className="w-full h-full min-h-[124px] rounded-[8px] bg-white border border-transparent p-4 resize-none focus:outline-none focus:ring-2 focus:ring-[#1b1c1f]/20" />
                         </div>
-                        <button className="w-full bg-[rgba(255,255,255,0.3)] flex justify-between items-center pl-6 pr-2 py-2 rounded-full border border-[rgba(255,255,255,0.9)] shadow-sm hover:bg-[#1b1c1f] group mt-auto transition-all">
+                        <button className="w-full bg-[rgba(255,255,255,0.3)] flex justify-between items-center pl-6 pr-2 py-2 rounded-full border border-[rgba(255,255,255,0.12)] shadow-sm hover:bg-[#1b1c1f] group mt-auto transition-all">
                             <span className="font-semibold text-[16px] text-[#1b1c1f] group-hover:text-white">브랜드 진단 요청하기</span>
                             <div className="bg-[#1b1c1f] rounded-full p-1 size-[32px] flex items-center justify-center text-white group-hover:scale-110"><ArrowNarrowRight /></div>
                         </button>
