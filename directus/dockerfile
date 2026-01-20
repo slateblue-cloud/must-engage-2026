@@ -1,0 +1,37 @@
+# 1. Base Image 설정
+# 프로덕션에서는 'latest'보다 구체적인 버전을 명시하는 것이 안전합니다.
+# (호환성 문제를 방지하기 위함)
+FROM directus/directus:latest
+
+# 2. 작업 디렉토리 설정 (기본값)
+WORKDIR /directus
+
+# 3. 루트 권한 획득 (패키지 설치 및 파일 복사를 위해 잠시 root로 전환)
+USER root
+
+# [옵션] 추가적인 npm 패키지가 필요하다면 설치
+# 예: Redis 사용, 특정 이미지 처리 라이브러리 등
+# RUN npm install io-redis
+
+# 4. 필요한 디렉토리 미리 생성 (권한 설정 에러 방지)
+RUN mkdir -p /directus/extensions /directus/database /directus/uploads
+
+# 5. 커스텀 익스텐션 복사
+# 로컬에 extensions 폴더가 있는 경우에만 복사됩니다.
+COPY ./extensions /directus/extensions
+
+# 6. 파일 권한 설정 (중요!)
+# 복사한 파일들의 소유권을 'node' 유저에게 넘겨야 권한 에러가 안 납니다.
+RUN chown -R node:node /directus/extensions \
+    && chown -R node:node /directus/database \
+    && chown -R node:node /directus/uploads
+
+# 7. 보안을 위해 다시 node 유저로 전환
+USER node
+
+# 8. 포트 노출
+EXPOSE 8055
+
+# 9. 실행 명령
+# 부트스트랩(DB마이그레이션) 후 서버 시작
+CMD ["sh", "-c", "npx directus bootstrap && npx directus start"]
