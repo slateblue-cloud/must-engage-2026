@@ -1,5 +1,5 @@
 import React from "react";
-import imgHero from "../../assets/5ec6b520f685d64fd53f5860c08046c6e133b073.png";
+import imgHero from "../../assets/hero01.png";
 
 interface HeroProps {
     data?: {
@@ -27,7 +27,7 @@ export function Hero({ data }: HeroProps) {
                 <div className="basis-0 content-stretch flex flex-col gap-[32px] grow items-start justify-center min-h-px min-w-px not-italic relative shrink-0 w-full pointer-events-auto">
                     <div className="content-stretch flex flex-col gap-[8px] items-start relative shrink-0 text-[#1b1c1f] w-full">
                         <p className="font-['Pretendard',sans-serif] leading-[1.3] text-[24px] md:text-[40px]">{content.subTitle}</p>
-                        <div className="font-['Pretendard',sans-serif] font-extrabold leading-[1.2] text-[32px] md:text-[64px] text-nowrap">
+                        <div className="font-['Pretendard',sans-serif] font-extrabold leading-[1.1] text-[32px] md:text-[88px] text-nowrap">
                             <p className="mb-0">{content.titleLine1}</p>
                             <p>{content.titleLine2}</p>
                         </div>

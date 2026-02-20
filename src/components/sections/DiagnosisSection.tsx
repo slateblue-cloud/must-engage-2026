@@ -110,8 +110,8 @@ export function DiagnosisSection({ data }: DiagnosisSectionProps) {
         mass: 1
     });
 
-    const targetLeft = isMobile ? "50%" : "10%";
-    const targetLeft3 = isMobile ? "50%" : "12%";
+    const targetLeft = isMobile ? "10%" : "-15%";
+    const targetLeft3 = isMobile ? "10%" : "-12%";
 
     const x1 = useTransform(smoothProgress, [0, 0.4, 0.9], ["150%", targetLeft, targetLeft]);
     const y1 = useTransform(smoothProgress, [0, 0.2, 0.4, 0.6, 0.9], ["0%", "-30%", "0%", "20%", "0%"]);

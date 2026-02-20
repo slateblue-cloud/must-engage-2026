@@ -49,7 +49,7 @@ export function RenovationSection({ data }: RenovationSectionProps) {
     };
 
     return (
-        <div className="w-full pt-[120px] pb-20 px-4 flex flex-col items-center gap-16 overflow-hidden">
+        <div className="w-full pt-[120px] md:pt-[240px] pb-0 px-4 flex flex-col items-center gap-16 overflow-hidden">
             <div className="text-center max-w-[1440px] w-full items-center flex flex-col gap-4">
                 <h2 className="font-extrabold text-[28px] md:text-[64px] text-white uppercase leading-[1.3] md:leading-[1.2] text-center">
                     <p className="mb-0">{content.titleLine1}</p>
@@ -60,12 +60,12 @@ export function RenovationSection({ data }: RenovationSectionProps) {
             <div className="flex flex-col md:flex-row gap-4 items-center justify-center w-full max-w-[1440px]">
                 {content.cards.map((c, i) => (
                     <div key={i} className={c.spacing}>
-                        <div className="bg-[rgba(255,255,255,0.08)] relative rounded-[24px] w-full md:w-[328px] h-[320px] md:h-[500px] overflow-hidden group hover:-translate-y-2 transition-all duration-300 hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)] hover:bg-[rgba(255,255,255,0.12)]">
+                        <div className="bg-[rgba(255,255,255,0.08)] relative rounded-[24px] w-full md:w-[328px] h-auto md:h-[500px] overflow-hidden group hover:-translate-y-2 transition-all duration-300 hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)] hover:bg-[rgba(255,255,255,0.12)]">
                             <div className="absolute inset-0 border border-[rgba(255,255,255,0.12)] rounded-[24px] pointer-events-none group-hover:border-[rgba(255,255,255,0.3)] transition-colors duration-300" />
                             <div className="flex flex-col items-end p-[24px] md:p-[32px] h-full justify-between">
-                                <div className="flex flex-col gap-[16px] items-start w-full text-white">
-                                    <div className="font-['Pretendard',sans-serif] font-semibold text-[32px] leading-[1.3] text-white min-h-[64px] md:min-h-[84px]">{c.title}</div>
-                                    <p className="font-['Pretendard',sans-serif] font-normal text-[18px] leading-[1.5] text-white">{c.description}</p>
+                                <div className="flex flex-col gap-4 items-start w-full text-white">
+                                    <div className="font-['Pretendard',sans-serif] font-semibold text-[24px] md:text-[32px] leading-[1.3] text-white md:min-h-[84px]">{c.title}</div>
+                                    <p className="font-['Pretendard',sans-serif] font-normal text-[16px] md:text-[18px] leading-[1.5] text-white">{c.description}</p>
                                 </div>
                                 <div className="size-[80px] md:size-[124px] relative transition-transform duration-500 group-hover:scale-110">
                                     <img alt="" className={`size-full object-contain opacity-90 ${c.rotate || ""}`} src={c.image} />
