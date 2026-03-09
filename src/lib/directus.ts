@@ -40,6 +40,16 @@ export async function getProjects() {
     }));
 }
 
+export async function getInsights() {
+    return await directus.request(readItems('insights', {
+        sort: ['sort'],
+    }));
+}
+
+export async function getLandingFooter() {
+    return await directus.request(readItem('landing_footer', 1));
+}
+
 export async function getDiagnosisCards() {
     return await directus.request(readItems('diagnosis_cards', {
         sort: ['sort'],

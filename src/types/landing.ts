@@ -33,6 +33,23 @@ export interface ImcItem {
     content: string[];
 }
 
+export interface InsightItem {
+    id: string;
+    title: string;
+    description: string;
+    image: string;
+}
+
+export interface FooterContent {
+    company: string;
+    representative: string;
+    business_number: string;
+    address: string;
+    email: string;
+    phone: string;
+    copyright: string;
+}
+
 export interface RenovationCardData {
     title: string | React.ReactNode;
     description: string;

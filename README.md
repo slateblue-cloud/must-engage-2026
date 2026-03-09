@@ -75,9 +75,9 @@ kubectl apply -f directus/service.yaml
 
 배포된 `directus-service`의 외부 IP를 확인한 후, 프론트엔드의 Directus 접속 주소를 수정해야 합니다.
 
-1.  GCP 콘솔 혹은 `kubectl get service directus-service` 명령으로 **EXTERNAL-IP**를 확인합니다.
-2.  프로토콜을 포함한 주소(예: `http://34.xxx.xxx.xxx:8055`)를 `.env` 파일의 `VITE_DIRECTUS_URL`에 반영합니다.
-3.  프론트엔드를 다시 빌드하여 배포합니다.
+1. GCP 콘솔 혹은 `kubectl get service directus-service` 명령으로 **EXTERNAL-IP**를 확인합니다.
+2. 프로토콜을 포함한 주소(예: `http://34.xxx.xxx.xxx:8055`)를 `.env` 파일의 `VITE_DIRECTUS_URL`에 반영합니다.
+3. 프론트엔드를 다시 빌드하여 배포합니다.
 
 ## 📝 주요 기능
 
