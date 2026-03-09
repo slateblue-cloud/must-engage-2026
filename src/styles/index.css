@@ -2,6 +2,11 @@
 @import './tailwind.css';
 @import './theme.css';
 
+body {
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
 * {
   cursor: auto !important;
 }
