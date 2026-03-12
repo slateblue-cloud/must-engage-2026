@@ -8,6 +8,7 @@ import moadSvg from "../../assets/moad.svg";
 import fortelierSvg from "../../assets/fortelier.svg";
 import emailIcon from "../../assets/email-icon.svg";
 import callIcon from "../../assets/call-icon.svg";
+import logoWSvg from "../../assets/logo_w.svg";
 import snsIcon1 from "../../assets/sns-icon01.svg";
 import snsIcon2 from "../../assets/sns-icon02.svg";
 import snsIcon3 from "../../assets/sns-icon03.svg";
@@ -92,10 +93,10 @@ export function Footer({ data }: FooterProps) {
     const content = data || {
         company: "주)머스트인게이지",
         representative: "차주헌",
-        business_number: "000-00-00000",
-        address: "서울특별시 강남구 논현동 28-2",
-        email: "ingo@domain.com",
-        phone: "+82-13-1234",
+        business_number: "683-87-01523",
+        address: "서울특별시 강남구 논현로135길 48, 4층 401호(논현동)",
+        email: "office@must-engage.com",
+        phone: "010-4298-2503",
         copyright: "© 2025 Must-Engage. All rights reserved."
     };
 
@@ -103,7 +104,7 @@ export function Footer({ data }: FooterProps) {
         <div className="w-full bg-[#e2e5ee] py-16 px-4 flex justify-center">
             <div className="max-w-[1440px] w-full flex flex-col md:flex-row gap-8 lg:gap-20 justify-between text-[#8b909b]">
                 <div className="flex flex-col gap-6 shrink-0">
-                    <img src={mustCreativeSvg} alt="Must Creative" className="h-[24px] w-auto object-contain place-self-start" />
+                    <img src={logoWSvg} alt="Must Engage" className="h-[48px] w-auto object-contain place-self-start" />
                     <div className="flex flex-col font-['Pretendard',sans-serif] text-[16px] font-normal text-[#8b909b] leading-[1.5]">
                         <p>{content.company}</p>
                         <p>대표자: {content.representative}</p>
@@ -146,7 +147,7 @@ export function Footer({ data }: FooterProps) {
                         options={[
                             { label: "머스트컴퍼니", icon: mustCompanySvg, link: "https://must.company/#main-page" },
                             { label: "머스트핀테크", icon: mufinSvg, link: "https://mufin.co.kr/" },
-                            { label: "머스트크리에이티브", icon: mustCreativeSvg, disabled: true },
+                            { label: "머스트크리에이티브", icon: mustCreativeSvg, link: "https://www.creative-must.com/" },
                             { label: "머스트U", icon: mustuSvg, link: "https://www.mustu.asia/" },
                             { label: "모드", icon: moadSvg, link: "https://moad.live/" },
                             { label: "포틀리에", icon: fortelierSvg, link: "https://www.fortelier.co.kr/" }

@@ -37,6 +37,7 @@ import snsIcon2 from "../assets/sns-icon02.svg";
 import snsIcon3 from "../assets/sns-icon03.svg";
 import snsIcon4 from "../assets/sns-icon04.svg";
 import logoSvg from "../assets/logo.svg";
+import logoWSvg from "../assets/logo_w.svg";
 
 // Thumbnail Images
 import tn2uc from "../assets/tn_img/2uc_tn.png";
@@ -780,14 +781,13 @@ export default function LandingPage() {
             <div className="w-full bg-[#e2e5ee] py-16 px-4 flex justify-center">
                 <div className="max-w-[1440px] w-full flex flex-col md:flex-row gap-8 lg:gap-20 justify-between text-[#8b909b]">
                     <div className="flex flex-col gap-6 shrink-0">
-                        <img src={mustCreativeSvg} alt="Must Creative" className="h-[24px] w-auto object-contain place-self-start" />
+                        <img src={logoWSvg} alt="Must Engage" className="h-[48px] w-auto object-contain place-self-start" />
                         <div className="flex flex-col font-['Pretendard',sans-serif] text-[16px] font-normal text-[#8b909b] leading-[1.5]">
                             <p>주)머스트인게이지</p>
                             <p>대표자: 차주헌</p>
-                            <p>사업자등록번호: 000-00-00000</p>
-                            <p>서울특별시 강남구 논현동 28-2</p>
-                                <p>© 2025 Must-Engage.</p>
-                                <p>All rights reserved.</p>
+                            <p>사업자등록번호: 683-87-01523</p>
+                            <p>서울특별시 강남구 논현로135길 48, 4층 401호(논현동)</p>
+                            <p>© 2025 Must-Engage. All rights reserved.</p>
                         </div>
                     </div>
 
@@ -804,11 +804,11 @@ export default function LandingPage() {
                         <div className="flex flex-col gap-3">
                             <div className="flex items-center gap-2 text-[15px]">
                                 <img src={emailIcon} alt="Email" className="w-5 h-5" />
-                                <span>ingo@domain.com</span>
+                                <span>office@must-engage.com</span>
                             </div>
                             <div className="flex items-center gap-2 text-[15px]">
                                 <img src={callIcon} alt="Phone" className="w-5 h-5" />
-                                <span>+82-13-1234</span>
+                                <span>010-4298-2503</span>
                             </div>
                         </div>
                         <div className="flex gap-3 mt-auto">
@@ -823,10 +823,10 @@ export default function LandingPage() {
                         <h4 className="font-['Pretendard',sans-serif] font-semibold text-[24px] text-[#1b1c1f] leading-[1.5]">Must Company</h4>
                         <CustomSelect
                             options={[
-                                { label: "머스트컴퍼니", icon: mustCompanySvg, link: "https://must.company/#main-page" },
-                                { label: "머스트핀테크", icon: mufinSvg, link: "https://mufin.co.kr/" },
-                                { label: "머스트크리에이티브", icon: mustCreativeSvg, disabled: true },
-                                { label: "머스트U", icon: mustuSvg, link: "https://www.mustu.asia/" },
+                            { label: "머스트컴퍼니", icon: mustCompanySvg, link: "https://must.company/#main-page" },
+                            { label: "머스트핀테크", icon: mufinSvg, link: "https://mufin.co.kr/" },
+                            { label: "머스트크리에이티브", icon: mustCreativeSvg, link: "https://www.creative-must.com/" },
+                            { label: "머스트U", icon: mustuSvg, link: "https://www.mustu.asia/" },
                                 { label: "모드", icon: moadSvg, link: "https://moad.live/" },
                                 { label: "포틀리에", icon: fortelierSvg, link: "https://www.fortelier.co.kr/" }
                             ]}
